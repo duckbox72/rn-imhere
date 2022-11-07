@@ -1,13 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 
 import { styles } from './styles';
 
-export default function App() {
+export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.eventName}>
+        Event Name
+      </Text>
+      
+      <Text style={styles.eventDate}>
+        Friday, November 4 2022
+      </Text>
+
+      <TextInput
+       style={styles.textInput}
+       placeholder="Atendee Name"
+       placeholderTextColor="#6b6b6b"
+      />
+
+
     </View>
   );
 }
