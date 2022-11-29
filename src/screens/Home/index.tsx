@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, TouchableOpacity, ScrollView, FlatList } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, ScrollView, FlatList, Alert } from 'react-native';
 
 import { Participant } from '../../components/participant';
 
@@ -9,11 +9,22 @@ export default function Home() {
   const participants = ['Rodrigo', 'Vini', 'Diego', 'Biro', 'Ana', 'Isa', 'Jack', 'Mayk', 'Dani'];
 
   function handleParticipantAdd() {
-    console.log("Add Participant Clicked");
+    if(participants.includes("Rodrigo")) {
+      return Alert.alert("Existing Participant", "Participant already on list")
+    }
   }
 
   function handleParticipantRemove(name: string) {
-    console.log(`Remove Participant Clicked ${name}`);
+    Alert.alert("Remove", `Remove ${name} from participants?`, [
+      {
+        text: 'Yes',
+        onPress: () => Alert.alert('Deleted')
+      },
+      {
+        text: 'No',
+        style: 'cancel'
+      }
+    ])
   }
 
 
