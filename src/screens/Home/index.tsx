@@ -7,7 +7,7 @@ import { styles } from './styles';
 
 export default function Home() {
   const [participants, setParticipants] = useState<string[]>([]);
-  const [participantName, setParticipanteName] = useState('');
+  const [participantName, setParticipantName] = useState('');
 
   //const participants = ['John'];
 
@@ -17,11 +17,10 @@ export default function Home() {
     }
 
     setParticipants(prevState => [...prevState, participantName]);
-    setParticipanteName('');
+    setParticipantName('');
   }
 
   function handleParticipantRemove(name: string) {
-    console.log(participants.filter(participant => participant !== name))
     Alert.alert("Remove", `Remove ${name} from participants?`, [
       {
         text: 'Yes',
@@ -50,8 +49,8 @@ export default function Home() {
         style={styles.textInput}
         placeholder="Participant Name"
         placeholderTextColor="#6b6b6b"
-        onChangeText={setParticipanteName}
-        //value={participantName}
+        onChangeText={setParticipantName}
+        value={participantName}
         />
 
         <TouchableOpacity 
